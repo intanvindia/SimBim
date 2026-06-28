@@ -211,7 +211,7 @@ Anda dapat menggunakan akun berikut untuk login dan mencoba fitur sesuai dengan 
 
 ### 📧 Kontak & Dukungan
 Punya pertanyaan atau ingin berkontribusi? Silakan hubungi pengembang:
-*   **Email:** bot.hunting101@gmail.com
+*   **Email:** intan.vk18@gmail.com
 *   **Issue Tracker:** GitHub Issues
 
 ---
