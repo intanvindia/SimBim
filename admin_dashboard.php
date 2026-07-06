@@ -1158,6 +1158,12 @@ include 'includes/header.php';
                         <p class="text-muted small">Unduh salinan database SIMBIM saat ini untuk cadangan keamanan.</p>
                         <a href="export_db.php" class="btn btn-success w-100" target="_blank"><i class="bi bi-download me-2"></i>Ekspor Database (.sql)</a>
                     </div>
+
+                    <div class="pb-card p-4 border-top border-5" style="border-color: #6366f1;">
+                        <h5 class="fw-bold mb-4 text-dark"><i class="bi bi-file-earmark-pdf-fill me-2" style="color: #6366f1;"></i>Dokumen Produk</h5>
+                        <p class="text-muted small">Unduh Dokumen Persyaratan Produk (PRD) terbaru dalam format PDF.</p>
+                        <a href="cetak_prd.php" class="btn btn-secondary w-100" style="background-color: #6366f1; border-color: #6366f1;" target="_blank"><i class="bi bi-printer me-2"></i>Cetak Dokumen PRD</a>
+                    </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="pb-card p-4 h-100 border-top border-5" style="border-color: #4A90E2;">
@@ -1564,6 +1570,29 @@ include 'includes/header.php';
     .printable-area { display: block !important; }
 }
 </style>
+
+<style>
+/* Skeleton Loader CSS */
+.skeleton-item .skeleton-label {
+    height: 12px;
+    width: 40%;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    animation: skeleton-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.skeleton-item .skeleton-range {
+    height: 20px;
+    width: 100%;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    animation: skeleton-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes skeleton-pulse {
+    50% { opacity: .5; }
+}
+</style>
+
 </body>
 
 </html>

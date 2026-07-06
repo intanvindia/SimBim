@@ -118,13 +118,13 @@ include 'includes/header.php';
             </div>
             <div class="row align-items-center position-relative" style="z-index: 1;">
                 <div class="col-lg-8">
-                    <h1 class="fw-bold text-dark">Halo, Bunda/Ayah! 👋</h1>
-                    <p class="text-muted lead">Pantau perkembangan potensi kecerdasan buah hati dan dapatkan rekomendasi kelas terbaik secara objektif.</p>
+                    <h1 class="fw-bold text-dark">Halo, <?= htmlspecialchars(explode(' ', $_SESSION['nama_lengkap'])[0]) ?>! 👋</h1>
+                    <p class="text-muted lead">Selamat datang di dashboard Anda. Pantau perkembangan anak dan mulai asesmen baru di sini.</p>
                     <div class="d-inline-flex align-items-center bg-primary-subtle text-primary p-2 px-3 rounded-pill fw-bold small">
                         <i class="bi bi-bar-chart-fill me-2"></i>Total <?= $count_anak_asesmen; ?> Asesmen Dilakukan
                     </div>
                 </div>
-                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 d-grid d-lg-block gap-2">
                     <?php if (($settings['registration_open'] ?? '1') == '1'): ?>
                         <a href="asesmen.php" class="btn btn-primary btn-lg px-4 shadow-sm rounded-pill"><i class="bi bi-plus-circle me-2"></i>Mulai Asesmen Baru</a>
                         <button type="button" class="btn btn-outline-primary btn-lg px-4 shadow-sm rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#modalTambahAnak">
@@ -217,7 +217,7 @@ include 'includes/header.php';
                 <div class="col-md-6 text-md-end mt-3 mt-md-0">
                     <form action="" method="GET" class="d-inline-block">
                         <div class="input-group input-group-sm">
-                            <span class="input-group-text bg-white border-primary text-primary"><i class="bi bi-funnel"></i></span>
+                            <label class="input-group-text bg-white border-primary text-primary" for="filterAnak"><i class="bi bi-funnel-fill"></i></label>
                             <select name="id_anak" class="form-select border-primary" onchange="this.form.submit()">
                                 <option value="0">Tampilkan Semua Anak</option>
                                 <?php 
@@ -238,7 +238,7 @@ include 'includes/header.php';
                         <tr>
                             <th class="py-3">Nama Anak</th>
                             <th class="py-3 text-center">Usia</th>
-                            <th class="py-3">Tanggal Tes Terakhir</th>
+                            <th class="py-3">Tes Terakhir</th>
                             <th style="text-align: center; width: 150px;">Aksi</th>
                         </tr>
                     </thead>
@@ -262,22 +262,22 @@ include 'includes/header.php';
                                     </td>
                                     <td style="text-align: center;">
                                         <?php if ($row['id_asesmen'] != null) { ?>
-                                            <a href="hitung_wp.php?id_asesmen=<?= $row['id_asesmen']; ?>" class="btn btn-sm btn-outline-primary rounded-pill px-3 mb-1 mb-md-0">
+                                            <a href="hitung_wp.php?id_asesmen=<?= $row['id_asesmen']; ?>" class="btn btn-sm btn-primary rounded-pill px-3 mb-1 mb-md-0">
                                                 <i class="bi bi-file-earmark-text me-1"></i>Hasil
                                             </a>
                                         <?php } else { ?>
                                             <a href="asesmen.php" class="btn btn-sm btn-primary rounded-pill px-3 mb-1 mb-md-0">
-                                                <i class="bi bi-pencil-square me-1"></i>Ikut Tes
+                                                <i class="bi bi-pencil-square me-1"></i>Mulai Tes
                                             </a>
                                         <?php } ?>
-                                        <button type="button" class="btn btn-sm btn-outline-info rounded-pill px-3 mb-1 mb-md-0" 
+                                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 mb-1 mb-md-0" 
                                                 data-bs-toggle="modal" data-bs-target="#modalEditAnak"
                                                 data-id="<?= $row['id_anak'] ?>"
                                                 data-nama="<?= htmlspecialchars($row['nama_anak']) ?>"
                                                 data-usia="<?= $row['usia'] ?>">
                                             <i class="bi bi-pencil-fill me-1"></i>Edit
                                         </button>
-                                        <a href="includes/proses_anak.php?aksi=hapus&id=<?= $row['id_anak'] ?>" 
+                                        <a href="includes/proses_anak.php?aksi=hapus&id=<?= $row['id_anak'] ?>"
                                            class="btn btn-sm btn-outline-danger rounded-pill px-3" 
                                            onclick="return confirm('Apakah Anda yakin ingin menghapus data anak ini? Semua riwayat asesmennya juga akan terhapus.')">
                                             <i class="bi bi-trash-fill me-1"></i>Hapus
@@ -315,17 +315,17 @@ include 'includes/header.php';
         <div class="modal-body">
             <div class="mb-3">
                 <label for="nama_anak_modal" class="form-label fw-bold">Nama Lengkap Anak</label>
-                <input type="text" name="nama_anak" id="nama_anak_modal" class="form-control" placeholder="Contoh: Budi Sanjaya" required>
+                <input type="text" name="nama_anak" id="nama_anak_modal" class="form-control" placeholder="Masukkan nama panggilan atau lengkap" required>
             </div>
             <div class="mb-3">
                 <label for="usia_modal" class="form-label fw-bold">Usia Anak (Tahun)</label>
-                <input type="number" name="usia" id="usia_modal" class="form-control" min="2" max="15" placeholder="Contoh: 6" required>
+                <input type="number" name="usia" id="usia_modal" class="form-control" min="2" max="15" placeholder="Masukkan usia dalam tahun, cth: 6" required>
             </div>
             <input type="hidden" name="aksi" value="tambah">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-primary">Simpan Data Anak</button>
+          <button type="submit" class="btn btn-primary">Simpan Anak</button>
         </div>
       </form>
     </div>

@@ -269,13 +269,13 @@ include 'includes/header.php';
         <input type="hidden" name="id_asesmen" value="<?= $id_asesmen; ?>">
         <input type="hidden" name="chart_image" id="chart_image">
 
-        <div class="my-5 d-flex flex-column flex-md-row gap-3 justify-content-start">
+        <div class="my-5 d-flex flex-column flex-md-row gap-2 justify-content-start">
+            <button type="button" onclick="handleCetak()" class="btn btn-primary px-4 shadow-sm py-2">
+                <i class="bi bi-printer-fill me-2"></i>Cetak Ulang Laporan (PDF)
+            </button>
             <a href="<?= $dashboard_link ?>" class="btn btn-outline-secondary px-4 shadow-sm py-2">
                 <i class="bi bi-arrow-left me-2"></i>Kembali ke Dashboard
             </a>
-            <button type="button" onclick="handleCetak()" class="btn btn-danger px-4 shadow-sm py-2">
-                <i class="bi bi-file-earmark-pdf-fill me-2"></i>Cetak Laporan (PDF)
-            </button>
         </div>
     </form>
 </div>

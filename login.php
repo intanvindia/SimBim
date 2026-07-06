@@ -77,18 +77,18 @@ include 'includes/header.php';
                     <div class="mb-3">
                         <label class="form-label fw-bold">Username</label>
                         <div class="input-group">
-                            <span class="input-group-text bg-light border-end-0"><i class="bi bi-person text-muted"></i></span>
-                            <input type="text" name="username" class="form-control bg-light border-start-0 ps-0" placeholder="Masukkan username" required>
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input type="text" name="username" class="form-control" placeholder="Masukkan username Anda" required>
                         </div>
                     </div>
                     
                     <div class="mb-4">
                         <label class="form-label fw-bold">Password</label>
                         <div class="input-group">
-                            <span class="input-group-text bg-light border-end-0"><i class="bi bi-lock text-muted"></i></span> 
-                            <input type="password" name="password" id="passwordFieldLogin" class="form-control bg-light border-start-0 ps-0" placeholder="Masukkan password" required>
-                            <button class="btn btn-outline-secondary bg-light border-start-0" type="button" id="togglePasswordLogin">
-                                <i class="bi bi-eye-slash text-muted"></i>
+                            <span class="input-group-text"><i class="bi bi-lock"></i></span> 
+                            <input type="password" name="password" id="passwordFieldLogin" class="form-control" placeholder="Masukkan password" required>
+                            <button class="btn btn-outline-secondary" type="button" id="togglePasswordLogin">
+                                <i class="bi bi-eye-slash"></i>
                             </button>
                         </div>
                     </div>
@@ -101,7 +101,7 @@ include 'includes/header.php';
                         const passwordField = document.getElementById('passwordFieldLogin');
                         const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
                         passwordField.setAttribute('type', type);
-                        this.querySelector('i').classList.toggle('bi-eye');
+                        this.querySelector('i').classList.toggle('bi-eye-fill');
                         this.querySelector('i').classList.toggle('bi-eye-slash');
                     });
                 </script>

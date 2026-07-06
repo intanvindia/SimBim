@@ -244,10 +244,10 @@ include 'includes/header.php';
                     </div>
                     <div class="col-md-2"><label class="form-label fw-semibold">Usia Min.</label><input type="number" name="usia_min" class="form-control" placeholder="cth: 5" value="<?= $usia_min ?>"></div>
                     <div class="col-md-2"><label class="form-label fw-semibold">Usia Max.</label><input type="number" name="usia_max" class="form-control" placeholder="cth: 10" value="<?= $usia_max ?>"></div>
-                    <div class="col-md-8 d-flex align-items-end gap-2">
-                        <button type="submit" class="btn btn-primary w-100"><i class="bi bi-search me-2"></i>Filter Data</button>
-                        <a href="export_excel.php?start_date=<?= $start_date ?>&end_date=<?= $end_date ?>&usia_min=<?= $usia_min ?>&usia_max=<?= $usia_max ?>&id_kelas=<?= $id_kelas_filter ?>" class="btn btn-success w-100"><i class="bi bi-file-earmark-excel me-2"></i>Unduh Excel</a>
-                        <button type="button" onclick="window.print()" class="btn btn-outline-secondary w-100"><i class="bi bi-printer me-2"></i>Cetak</button>
+                    <div class="col-md-6 d-flex align-items-end gap-2">
+                        <button type="submit" class="btn btn-primary w-100"><i class="bi bi-search me-2"></i>Terapkan Filter</button>
+                        <a href="export_excel.php?start_date=<?= $start_date ?>&end_date=<?= $end_date ?>&usia_min=<?= $usia_min ?>&usia_max=<?= $usia_max ?>&id_kelas=<?= $id_kelas_filter ?>" class="btn btn-outline-secondary w-100"><i class="bi bi-file-earmark-excel me-2"></i>Unduh Excel</a>
+                        <button type="button" onclick="window.print()" class="btn btn-outline-secondary w-100"><i class="bi bi-printer me-2"></i>Cetak Halaman</button>
                     </div>
                 </form>
 

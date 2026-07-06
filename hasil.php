@@ -273,15 +273,15 @@ include 'includes/header.php';
         <input type="hidden" name="id_asesmen" value="<?= $id_asesmen; ?>">
         <input type="hidden" name="chart_image" id="chart_image">
 
-        <div class="my-5 d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
-            <a href="dashboard.php" class="btn btn-outline-secondary px-4 shadow-sm py-2 rounded-pill">
-                <i class="bi bi-house me-2"></i>Beranda
-            </a>
-            <button type="button" onclick="handleCetak()" class="btn btn-danger px-4 shadow-sm py-2 rounded-pill">
-                <i class="bi bi-file-earmark-pdf me-2"></i>Cetak PDF
+        <div class="my-5 d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
+            <button type="button" onclick="handleCetak()" class="btn btn-primary px-4 shadow-sm py-2 rounded-pill">
+                <i class="bi bi-printer-fill me-2"></i>Cetak Laporan PDF
             </button>
-            <a href="export_excel.php?id_asesmen=<?= $id_asesmen ?>" class="btn btn-success px-4 shadow-sm py-2 rounded-pill">
-                <i class="bi bi-file-earmark-excel me-2"></i>Simpan Excel
+            <a href="export_excel.php?id_asesmen=<?= $id_asesmen ?>" class="btn btn-outline-secondary px-4 shadow-sm py-2 rounded-pill">
+                <i class="bi bi-file-earmark-excel me-2"></i>Simpan ke Excel
+            </a>
+            <a href="dashboard.php" class="btn btn-outline-secondary px-4 shadow-sm py-2 rounded-pill">
+                <i class="bi bi-house me-2"></i>Kembali ke Dashboard
             </a>
         </div>
     </form>

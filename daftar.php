@@ -67,8 +67,8 @@ include 'includes/header.php';
                     <div class="mb-3">
                         <label class="form-label fw-bold">Nama Lengkap</label>
                         <div class="input-group has-validation">
-                            <span class="input-group-text bg-light border-end-0"><i class="bi bi-person-vcard text-muted"></i></span>
-                            <input type="text" name="nama_lengkap" id="nama_lengkap" class="form-control bg-light border-start-0 ps-0" placeholder="Nama Lengkap Anda" required>
+                            <span class="input-group-text"><i class="bi bi-person-vcard"></i></span>
+                            <input type="text" name="nama_lengkap" id="nama_lengkap" class="form-control" placeholder="Contoh: Budi Sanjaya" required>
                             <div class="invalid-feedback">Nama lengkap hanya boleh berisi huruf dan spasi.</div>
                         </div>
                     </div>
@@ -76,8 +76,8 @@ include 'includes/header.php';
                     <div class="mb-3">
                         <label class="form-label fw-bold">Nomor HP (WhatsApp)</label>
                         <div class="input-group has-validation">
-                            <span class="input-group-text bg-light border-end-0"><i class="bi bi-whatsapp text-muted"></i></span>
-                            <input type="text" name="no_hp" id="no_hp" class="form-control bg-light border-start-0 ps-0" placeholder="Contoh: 08123456789" required>
+                            <span class="input-group-text"><i class="bi bi-whatsapp"></i></span>
+                            <input type="text" name="no_hp" id="no_hp" class="form-control" placeholder="Contoh: 081234567890" required>
                             <div class="invalid-feedback">Nomor HP tidak valid. Gunakan format Indonesia (cth: 0812...).</div>
                         </div>
                     </div>
@@ -85,8 +85,8 @@ include 'includes/header.php';
                     <div class="mb-3">
                         <label class="form-label fw-bold">Username</label>
                         <div class="input-group has-validation">
-                            <span class="input-group-text bg-light border-end-0"><i class="bi bi-person text-muted"></i></span>
-                            <input type="text" name="username" id="username" class="form-control bg-light border-start-0 ps-0" placeholder="Username unik" required>
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="Buat username unik" required>
                             <div class="invalid-feedback">Username minimal 4 karakter (hanya huruf, angka, dan underscore).</div>
                         </div>
                     </div>
@@ -94,10 +94,10 @@ include 'includes/header.php';
                     <div class="mb-4">
                         <label class="form-label fw-bold">Password</label>
                         <div class="input-group has-validation">
-                            <span class="input-group-text bg-light border-end-0"><i class="bi bi-lock text-muted"></i></span> 
-                            <input type="password" name="password" id="passwordFieldRegister" class="form-control bg-light border-start-0 ps-0" placeholder="Buat password" required>
-                            <button class="btn btn-outline-secondary bg-light border-start-0" type="button" id="togglePasswordRegister">
-                                <i class="bi bi-eye-slash text-muted"></i>
+                            <span class="input-group-text"><i class="bi bi-lock"></i></span> 
+                            <input type="password" name="password" id="passwordFieldRegister" class="form-control" placeholder="Minimal 6 karakter" required>
+                            <button class="btn btn-outline-secondary" type="button" id="togglePasswordRegister">
+                                <i class="bi bi-eye-slash"></i>
                             </button>
                             <div class="invalid-feedback">Password minimal harus terdiri dari 6 karakter.</div>
                         </div>

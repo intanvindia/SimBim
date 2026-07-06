@@ -14,7 +14,7 @@
 ### 📝 Deskripsi Proyek
 **SIMBIM** adalah platform cerdas yang dirancang untuk membantu orang tua memilih kelas bimbingan belajar (bimbel) yang paling sesuai dengan potensi anak. Berbeda dengan sistem konvensional, SIMBIM menggunakan pendekatan psikologis berbasis minat dan bakat, bukan sekadar nilai akademik sekolah.
 
-Dengan mengimplementasikan metode **Weighted Product (WP)**, sistem memberikan rekomendasi yang objektif, transparan, dan dapat dipertanggungjawabkan secara ilmiah.
+Dengan mengimplementasikan metode **Weighted Product (WP)**, sistem memberikan rekomendasi yang objektif, terpersonalisasi, dan dapat dipertanggungjawabkan secara ilmiah untuk mendukung pengambilan keputusan orang tua.
 
 ---
 
@@ -22,10 +22,10 @@ Dengan mengimplementasikan metode **Weighted Product (WP)**, sistem memberikan r
 
 #### 👨‍👩‍👧‍👦 Untuk Orang Tua
 *   **Smart Assessment:** Kuesioner interaktif dengan *Progress Bar* dan validasi instan.
-*   **Visualized Results:** Pemetaan bakat menggunakan **Radar Chart** dan kesimpulan deskriptif otomatis.
-*   **Progress Tracking:** Pantau perkembangan potensi anak dari waktu ke waktu melalui **Line Chart** perbandingan.
-*   **Profil Kecerdasan:** 🆕 Visual *Progress Bar* per aspek kecerdasan dari asesmen terakhir.
-*   **Professional Reports:** Unduh hasil asesmen dalam format **PDF** yang rapi.
+*   **Manajemen Profil Anak:** Kelola data beberapa anak dalam satu akun, memudahkan asesmen berulang.
+*   **Visualized Results:** Pemetaan bakat menggunakan **Radar Chart** dan kesimpulan deskriptif otomatis di halaman hasil.
+*   **Progress Tracking:** Pantau perkembangan potensi anak dari waktu ke waktu melalui **Line Chart** di dasbor dan halaman profil anak.
+*   **Professional Reports:** Unduh laporan hasil asesmen lengkap dalam format **PDF** yang rapi.
 
 #### 🛠️ Untuk Administrator
 *   **Analytics Dashboard:** Pantau tren pendaftaran, distribusi minat, statistik bulanan, dan **Top 5 Kelas** melalui 3 grafik dinamis.
@@ -35,10 +35,10 @@ Dengan mengimplementasikan metode **Weighted Product (WP)**, sistem memberikan r
 *   **Excel Export:** 🆕 Unduh rekap laporan asesmen berdasarkan rentang tanggal ke format **Excel**.
 
 #### 📋 Untuk Staf (Hak Akses Terbatas) — 🆕
-*   **Manajemen Follow-Up (Mini CRM):** Staf dapat mengubah status tindak lanjut (`Belum Dihubungi`, `Sudah Dihubungi`, `Mendaftar`) dan menambahkan catatan untuk setiap hasil asesmen.
-*   **Utilitas Data:** Fitur cerdas untuk mendeteksi dan membersihkan **akun duplikat**, serta memantau **aktivitas login** terakhir dari orang tua.
-*   **Dukungan Penuh:** Staf dapat mereset password orang tua, mencetak kartu pendaftaran fisik (PDF), dan mengisi asesmen atas nama orang tua.
-*   **Integrasi WhatsApp:** Tombol "Hubungi WA" untuk follow-up yang lebih cepat.
+*   **Manajemen Follow-Up (Mini-CRM):** Ubah status tindak lanjut (`Belum Dihubungi`, `Sudah Dihubungi`, `Mendaftar`) dan tambahkan catatan untuk setiap hasil asesmen.
+*   **Dukungan Pengguna:** Reset password orang tua, cetak kartu pendaftaran fisik (PDF), dan isi asesmen atas nama mereka.
+*   **Utilitas Data:** Deteksi dan bersihkan **akun duplikat** serta pantau **aktivitas login** terakhir pengguna.
+*   **Integrasi Cepat:** Tombol "Hubungi WA" untuk follow-up yang lebih cepat dan efisien.
 
 ---
 
@@ -64,7 +64,7 @@ Sistem ini menggunakan teknik perkalian untuk menghubungkan rating kriteria. Set
 
 | Komponen | Teknologi |
 | :--- | :--- |
-| **Core Engine** | PHP 8.x Native |
+| **Core Engine** | PHP 8.5 Native |
 | **Database** | MySQL |
 | **Frontend Framework** | Bootstrap 5.3 + Bootstrap Icons |
 | **Data Visualization** | Chart.js |
@@ -79,32 +79,34 @@ Sistem ini menggunakan teknik perkalian untuk menghubungkan rating kriteria. Set
 SimBim/
 ├── config/
 │   └── koneksi.php            # Konfigurasi koneksi database
+├── database/
+│   ├── simbim.sql             # Schema & data awal database
+│   └── migrate2.php           # Skrip migrasi: aktifkan role staf
 ├── includes/
 │   ├── header.php             # Template navbar & head (shared)
 │   ├── footer.php             # Template footer (shared)
 │   ├── get_matriks.php        # API AJAX: ambil data matriks kelas
 │   └── proses_simpan.php      # Handler: simpan hasil asesmen
-├── database/
-│   ├── simbim.sql             # Schema & data awal database
-│   └── migrate2.php           # Migrasi: aktifkan role staf
 ├── assets/
 │   ├── style.css              # Stylesheet kustom
 │   ├── dompdf/                # Library PDF generator
 │   ├── img/                   # Gambar & banner
-│   └── dompdf/                # Library PDF generator
 ├── index.php                  # Landing page publik
 ├── login.php                  # Halaman login
 ├── daftar.php                 # Registrasi akun orang tua
 ├── logout.php                 # Handler logout
 ├── maintenance.php            # Halaman mode pemeliharaan
 ├── asesmen.php                # Form kuesioner asesmen anak
+├── profil_anak.php            # Halaman detail riwayat per anak
 ├── dashboard.php              # Dashboard orang tua
 ├── staff_dashboard.php        # Dashboard staf (read-only)
 ├── admin_dashboard.php        # Panel admin (full access)
-├── hitung_wp.php              # Mesin kalkulasi Weighted Product
-├── hasil.php                  # Redirect hasil asesmen
+├── hasil.php                  # Halaman hasil (setelah asesmen)
+├── hitung_wp.php              # Halaman hasil (untuk riwayat)
 ├── cetak_pdf.php              # Generate laporan PDF
+├── cetak_kartu.php            # Generate kartu pendaftaran (PDF)
 ├── export_db.php              # Backup database (SQL dump)
+├── export_excel.php           # Generate laporan Excel
 └── README.md
 ```
 
@@ -144,7 +146,15 @@ Anda dapat menggunakan akun berikut untuk login dan mencoba fitur sesuai dengan 
 
 ###  Log Perubahan (Changelog)
 
-#### 🚀 Versi 1.5 (Pembaruan Terkini)
+#### ✨ Versi 1.6 (Peningkatan UI/UX) — Pembaruan Terkini
+*   **Modern Loading Experience:** Mengganti *spinner* klasik dengan efek *Skeleton Loading* yang lebih modern saat memuat data matriks di panel admin.
+*   **Konsistensi Desain Form:** Merombak desain form input (`login`, `daftar`) menjadi gaya "boxy" yang lebih bersih dan konsisten, meninggalkan gaya *underline*.
+*   **Hierarki Aksi yang Jelas:** Menetapkan satu tombol aksi utama (`btn-primary`) per halaman/konteks (misal: "Mulai Asesmen", "Cetak Laporan") untuk memandu alur pengguna dengan lebih efektif.
+*   **Teks Aksi yang Lebih Baik:** Memperjelas teks pada tombol-tombol di seluruh aplikasi agar lebih ringkas dan mudah dipahami.
+*   **Pengalaman Personal:** Pesan selamat datang di dasbor orang tua kini menyapa nama depan pengguna untuk sentuhan yang lebih personal.
+*   **Dokumentasi Dinamis:** Menambahkan fitur bagi Admin untuk mencetak Dokumen Persyaratan Produk (PRD) terbaru langsung dari dashboard.
+
+#### 🚀 Versi 1.5 (Transformasi Peran Staf)
 *   **Transformasi Role Staf (Tata Usaha):**
     *   **Manajemen Follow-Up (Mini CRM):** Staf kini dapat mengubah status tindak lanjut (`Belum Dihubungi`, `Sudah Dihubungi`, `Mendaftar`) dan menambahkan catatan untuk setiap hasil asesmen.
     *   **Integrasi WhatsApp:** Tombol "Hubungi WA" ditambahkan di laporan dan monitor aktivitas untuk follow-up yang lebih cepat.
