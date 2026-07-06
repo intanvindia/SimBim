@@ -116,7 +116,7 @@ SimBim/
 
 1.  **Clone & Masuk ke Direktori:**
     ```bash
-    git clone https://github.com/BotHunting/SimBim.git
+    git clone https://github.com/intanvindia/SimBim.git
     cd SimBim
     ```
 2.  **Persiapan Database:**
