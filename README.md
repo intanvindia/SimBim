@@ -146,6 +146,30 @@ Anda dapat menggunakan akun berikut untuk login dan mencoba fitur sesuai dengan 
 
 ---
 
+### 🤝 Berkontribusi (Contributing)
+
+Kami sangat terbuka untuk kontribusi dari komunitas! Jika Anda menemukan bug, memiliki ide fitur, atau ingin meningkatkan kode, jangan ragu untuk:
+1.  **Buka Issue:** Laporkan bug atau ajukan ide baru di [GitHub Issues](https://github.com/intanvindia/SimBim/issues).
+2.  **Fork & Pull Request:** Buat *fork* dari repositori ini, buat perubahan Anda di *branch* terpisah, dan kirimkan *Pull Request* dengan penjelasan yang jelas.
+
+Setiap kontribusi, sekecil apapun, sangat kami hargai.
+
+---
+
+### 🛡️ Kebijakan Keamanan (Security)
+
+Kami berkomitmen untuk menjaga keamanan aplikasi. Jika Anda menemukan kerentanan keamanan, mohon untuk melaporkannya secara bertanggung jawab sesuai dengan kebijakan kami.
+
+➡️ **[Baca Kebijakan Keamanan Lengkap di SECURITY.md](SECURITY.md)**
+
+---
+
+### 📜 Lisensi (License)
+
+Proyek ini dilisensikan di bawah **MIT License**. Ini berarti Anda bebas untuk menggunakan, menyalin, memodifikasi, menggabungkan, mempublikasikan, mendistribusikan, mensublisensikan, dan/atau menjual salinan perangkat lunak. Lihat file `LICENSE` di root repositori untuk detail lengkapnya.
+
+---
+
 ###  Log Perubahan (Changelog)
 
 #### ✨ Versi 1.6 (Peningkatan UI/UX) — Pembaruan Terkini
